@@ -6,6 +6,7 @@ source 'https://rubygems.org' do
   gem 'jquery-rails'
   gem 'mysql2', '~> 0.3.21'
   gem 'rails', '4.2.4'
+  gem 'slack-api'
   group :doc do
     gem 'yard'
   end

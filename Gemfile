@@ -1,15 +1,17 @@
 ruby '2.2.3'
 
 source 'https://rubygems.org' do
+  gem 'coffee-rails'
   gem 'i18n'
   gem 'jbuilder'
   gem 'jquery-rails'
   gem 'mysql2', '~> 0.3.21'
   gem 'rails', '4.2.4'
   gem 'slack-api'
-  group :doc do
-    gem 'yard'
-  end
+  gem 'slim-rails'
+  gem 'thin'
+  gem 'turbolinks'
+
 
   group :development do
     gem 'web-console', '~> 2.0'
@@ -40,5 +42,8 @@ source 'https://rubygems.org' do
 
   group :staging, :production do
     gem 'eventmachine', '1.2.0.1'
+  end
+  group :doc do
+    gem 'yard'
   end
 end

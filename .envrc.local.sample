@@ -1,0 +1,4 @@
+export DATABASE_HOST=localhost
+export DATABASE_PORT=3306
+export DATABASE_USERNAME=user
+export DATABASE_PASSWORD=pass

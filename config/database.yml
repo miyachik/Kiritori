@@ -1,0 +1,26 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_general_ci
+  pool: 2
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: kiritori_development
+
+test:
+  <<: *default
+  database: kiritori_test
+
+staging:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+
+production:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>

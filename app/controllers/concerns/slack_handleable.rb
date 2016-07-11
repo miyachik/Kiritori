@@ -23,11 +23,11 @@ module SlackHandleable
   end
 
   def format_messages(messages, users)
-    text = []
-    messages.each do |message|
+    text = ''
+    messages.reverse_each do |message|
       user_name = users[message['user']]
       raw = message['text']
-      text.push("**#{user_name}** \n #{raw}")
+      text += "**#{user_name}** <br>#{raw}\n"
     end
     text
   end

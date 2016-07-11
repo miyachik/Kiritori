@@ -1,8 +1,8 @@
-class HomeController < ApplicationController\
+class HomeController < ApplicationController
   include SlackHandleable
 
   def index
-    text = output_message('times-miyachi')
+    @text = output_message('times-miyachi')
   end
 
   def create
@@ -10,7 +10,5 @@ class HomeController < ApplicationController\
   end
 
   def show
-    if 
-    end
   end
 end

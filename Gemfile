@@ -8,6 +8,7 @@ source 'https://rubygems.org' do
   gem 'mysql2', '~> 0.3.21'
   gem 'rails', '4.2.4'
   gem 'slack-api'
+  gem 'slack_markdown'
   gem 'slim-rails'
   gem 'thin'
   gem 'turbolinks'

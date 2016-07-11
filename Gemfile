@@ -12,7 +12,6 @@ source 'https://rubygems.org' do
   gem 'thin'
   gem 'turbolinks'
 
-
   group :development do
     gem 'web-console', '~> 2.0'
   end

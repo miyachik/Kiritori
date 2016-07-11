@@ -1,1 +1,4 @@
 h1 home
+= form_tag(action="/home#create", :method => :POST)
+  = text_field :url 
+  = submit_tag "発行"

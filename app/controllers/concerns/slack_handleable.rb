@@ -27,7 +27,7 @@ module SlackHandleable
     messages.reverse_each do |message|
       user_name = users[message['user']]
       raw = message['text']
-      text += "**#{user_name}** <br>#{raw}\n"
+      text += "**#{user_name}** \n #{raw}\n"
     end
     text
   end

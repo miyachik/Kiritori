@@ -21,7 +21,7 @@
           th
             |  終了予定日時
       tbody
-        = form_for @ab_report, url: ab_report_path, method: 'patch' do |f|
+        = form_for @ab_test, url: ab_test_path, method: 'patch' do |f|
           tr
             td
               = f.label :branch

@@ -1,16 +1,26 @@
 ruby '2.2.3'
 
 source 'https://rubygems.org' do
+  gem 'coffee-rails'
   gem 'i18n'
   gem 'jbuilder'
   gem 'jquery-rails'
+  gem 'therubyracer'
   gem 'mysql2', '~> 0.3.21'
   gem 'rails', '4.2.4'
-  group :doc do
-    gem 'yard'
-  end
+  gem 'slack-api'
+  gem 'slack_markdown'
+  gem 'slim-rails'
+  gem 'thin'
+  gem 'turbolinks'
+  gem 'unicorn'
 
   group :development do
+    gem 'capistrano'
+    gem 'capistrano-rails'
+    gem 'capistrano-bundler'
+    gem 'capistrano-rbenv'
+    gem 'capistrano3-unicorn', require: false
     gem 'web-console', '~> 2.0'
   end
 
@@ -39,5 +49,8 @@ source 'https://rubygems.org' do
 
   group :staging, :production do
     gem 'eventmachine', '1.2.0.1'
+  end
+  group :doc do
+    gem 'yard'
   end
 end

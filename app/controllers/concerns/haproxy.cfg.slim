@@ -39,7 +39,6 @@
 = "    mode http\n"
 = "    cookie #{branch} insert nocache\n"
 = "    balance roundrobin\n"
-= "    http-send-branch-header X-HOST-branch\n"
 = "    fullconn 4000\n"
 = "\n"
 - Rails.application.config.normal_app_host.each_with_index do |app_host, index|

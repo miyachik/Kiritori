@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # frozen_string_literal: true
 class AbTestsController < ApplicationController
 
@@ -51,7 +52,7 @@ class AbTestsController < ApplicationController
 
   def enable_haproxy
     ab_test = AbTest.find(params[:id])
-    system("haproxy -f ./haproxy/haproxy#{ab_test.branch}.conf -sf /var/run/haproxy.pid")
+    system("sudo ln -fs /usr/local/app/Kiritori/haproxy/haproxy_#{ab_test.branch}.cfg /etc/haproxy/haproxy.cfg && sudo service haproxy reload")
     redirect_to({action: 'index'}, flash: { success: 'success' })
   end
 

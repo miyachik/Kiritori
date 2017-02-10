@@ -1,0 +1,42 @@
+- content_for :title do
+  |  ABテストレポート
+= link_to '新規作成', new_ab_tests_path, class: 'btn btn-info'
+.panel.panel-default
+  .panel-heading
+    h1.panel-title
+      | ABテスト一覧
+  .panel-body
+    table.table
+      thead
+        tr
+          th
+            |  ABテスト名(branch名)
+          th
+            |  説明
+          th
+            |  weight(本番:AB)
+          th
+            |  終了予定日時
+          th
+            |  作成日時
+
+      tbody
+        - @ab_tests.each do |ab_test|
+          tr
+            td
+              = ab_test.branch
+            td
+              = ab_test.description
+            td
+              = ab_test.weight.to_s
+            td
+              = ab_test.ended_at.to_s
+            td
+              = ab_test.created_at.to_s
+            td
+              = link_to '編集', edit_ab_tests_path(ab_test.id), class: 'btn btn-info'
+            td
+              = link_to '削除', ab_tests_path(ab_test.id), :method => :delete, class: 'btn btn-danger'
+            td
+              = link_to '再実行', rebuild_ab_tests_path(ab_test.id), class: 'btn btn-success'
+

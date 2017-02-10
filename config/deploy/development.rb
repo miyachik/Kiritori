@@ -1,3 +1,4 @@
+set :branch,"develop"
 set :stage, :development
 set :rails_env, 'development'
 #set :pty, false

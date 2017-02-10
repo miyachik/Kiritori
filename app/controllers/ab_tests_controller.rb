@@ -49,6 +49,12 @@ class AbTestsController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def enable_haproxy
+    ab_test = AbTest.find(params[:id])
+    system("haproxy -f ./haproxy/haproxy#{ab_test.branch}.conf -sf /var/run/haproxy.pid")
+    redirect_to({action: 'index'}, flash: { success: 'success' })
+  end
+
   private
 
   def ab_test_params

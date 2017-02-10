@@ -51,7 +51,7 @@ class AbTestsController < ApplicationController
 
   def enable_haproxy
     ab_test = AbTest.find(params[:id])
-    system("haproxy -f ./haproxy/haproxy#{ab_test.branch}.conf -sf /var/run/haproxy.pid")
+    system("sudo ln -fs /usr/local/app/Kiritori/haproxy/haproxy_#{ab_test.branch}.cfg && sudo service haproxy reload")
     redirect_to({action: 'index'}, flash: { success: 'success' })
   end
 

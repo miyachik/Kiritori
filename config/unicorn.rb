@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 worker_processes 1
 
-working_directory '/usr/local/app/Kiritori'
+working_directory '/usr/local/app/Kiritori/current'
 
 listen '/tmp/unicorn.sock'
 pid File.expand_path('tmp/pids/unicorn.pid')

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 set :application, 'Kiritori'
 set :repo_url, 'https://github.com/miyachik/Kiritori.git'
-set :deploy_to, '/usr/local/app'
+set :deploy_to, '/usr/local/app/Kiritori'
 set :keep_releases, 3
 set :rbenv_path, '/home/ec2-user/.rbenv'
 set :rbenv_type, :system # :system or :user

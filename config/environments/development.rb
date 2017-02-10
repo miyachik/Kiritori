@@ -38,6 +38,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.normal_app_host = ['127.0.0.1:80']
-  config.ab_app_host = ['127.0.0.2:80']
+  config.normal_app_host = ['13.112.205.87:80']
+  config.ab_app_host = ['13.112.77.159:80']
 end

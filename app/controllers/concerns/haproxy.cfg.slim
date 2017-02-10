@@ -2,9 +2,6 @@
 = "    log         127.0.0.1 local2 info\n"
 = "    chroot      /var/lib/haproxy\n"
 = "    pidfile     /var/run/haproxy.pid\n"
-- if Rails.env == 'staging'
-  = "    ca-base     /etc/ssl/certs\n"
-  = "    crt-base    /etc/ssl/private\n"
 = "    maxconn     10000\n"
 = "    user        haproxy\n"
 = "    group       haproxy\n"
@@ -23,7 +20,7 @@
 = "    stats uri /haproxy-status\n"
 = "\n"
 = "# web\n"
-= "listen fluad-api-view\n"
+= "listen front\n"
 = "    maxconn 4000\n"
 = "    fullconn 4000\n"
 - if Rails.env == 'staging'

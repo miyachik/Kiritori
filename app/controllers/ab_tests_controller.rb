@@ -30,31 +30,22 @@ class AbTestsController < ApplicationController
     ab_test.update(ab_test_params)
     ab_test.update(weight: params['weight'].to_s)
     if ab_test.save
-      flash[:success] = '保存に成功にしました。'
+      msg = '保存に成功にしました。'
       redirect_to action: :index
     else
-      flash[:danger] = '保存に失敗しました'
-      redirect_to action: :edit, id: params[:format]
+      msg = '保存に失敗しました'
+      redirect_to action: :edit, id: params[:id]
     end
   end
-
   def destroy
-    ab_test = AbTest.find(params[:format])
-    if ab_test.destroy_with_soft_delete
-      flash[:success] = 'Delete Success!'
-    else
-      flash[:danger] = 'Save Failed.'
-    end
-    redirect_to action: 'index'
+    ab_test = AbTest.find(params[:id])
+    msg = ab_test.destroy ? 'Delete Success!' : flash[:danger] = 'Save Failed.'
+    redirect_to({action: 'index'}, flash: { success: msg })
   end
 
   def rebuild
-    ab_test = AbTest.find(params[:format])
-    if export_config(ab_test)
-      flash[:success] = 'Rebuild Success!'
-    else
-      flash[:danger] = 'Save Failed.'
-    end
+    ab_test = AbTest.find(params[:id])
+    msg = export_config(ab_test) ? 'Rebuild Success!' : 'Save Failed.'
     redirect_to action: 'index'
   end
 

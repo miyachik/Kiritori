@@ -1,0 +1,43 @@
+- content_for :title do
+  |  ABテストレポート編集
+.panel.panel-default
+  .panel-heading
+    h1.panel-title
+      | ABテストレポート更新
+  .panel-body
+    table.table
+      thead
+        tr
+          th
+            |  ABテスト名
+          th
+            |  説明
+          th
+            |  weight
+          th
+            |
+          th
+            |  レポート内容
+          th
+            |  終了予定日時
+      tbody
+        = form_for @ab_report, url: ab_report_path, method: 'patch' do |f|
+          tr
+            td
+              = f.label :branch
+              = f.text_field :branch
+            td
+              = f.label :description, '説明'
+              = f.text_field :description
+            td
+              = f.label :weight, 'weight(本番)※%表記'
+              = text_field_tag 'weight[]'
+            td
+              = f.label :weight, 'weight(ABテスト)'
+              = text_field_tag 'weight[]'
+            td
+              .form-group.input-group
+                = f.label :ended_at, 'ended_at'
+                = f.text_field :ended_at, placeholder: 'yyyy/MM/dd hh:mm',class: 'datetimepicker'
+            td
+              = f.submit "更新" , class: "btn btn-large btn-primary"

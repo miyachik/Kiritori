@@ -12,7 +12,7 @@ set :rbenv_roles, :all # default value
 set :linked_dirs, %w(bin log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle tmp/unicorn)
 set :bundle_jobs, 4
 set :unicorn_pid, -> { File.join(shared_path, 'tmp', 'pids', 'unicorn.pid') }
-set :unicorn_config_path, -> { File.join(current_path, 'config', 'unicorn', "#{fetch(:rails_env)}.rb") }
+set :unicorn_config_path, -> { File.join(current_path, 'config', 'unicorn.rb') }
 namespace :deploy do
   after :publishing, :restart do
     on roles(:app), in: :sequence, wait: 5 do

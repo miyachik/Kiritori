@@ -39,4 +39,6 @@
               = link_to '削除', ab_test_path(ab_test.id), :method => :delete, class: 'btn btn-danger'
             td
               = link_to '再実行', rebuild_ab_test_path(ab_test.id), class: 'btn btn-success'
+            td
+              = link_to 'HAProxy', enable_haproxy_ab_test_path(ab_test.id), class: 'btn btn-success'
 

@@ -76,6 +76,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.normal_app_host = ['127.0.0.1:80']
-  config.ab_app_host = ['127.0.0.2:80']
 end

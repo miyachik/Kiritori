@@ -1,3 +1,5 @@
+require 'cgi'
+
 module SlackHandleable
   extend ActiveSupport::Concern
 
@@ -26,7 +28,7 @@ module SlackHandleable
     text = ''
     messages.reverse_each do |message|
       user_name = users[message['user']]
-      raw = message['text']
+      raw = CGI.unescapeHTML(message['text'])
       replies = raw.scan(/(<@[A-Z0-9]*>)/)
       replies.each  do |reply|
         user_id = reply[0].delete("@<>")

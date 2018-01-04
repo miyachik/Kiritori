@@ -12,14 +12,4 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 0) do
-
-  create_table "ab_tests", force: :cascade do |t|
-    t.string   "branch",      limit: 128,   default: "", null: false
-    t.text     "description", limit: 65535,              null: false
-    t.string   "weight",      limit: 128,                null: false
-    t.datetime "ended_at",                               null: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-  end
-
 end

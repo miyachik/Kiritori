@@ -1,4 +1,4 @@
-ruby '2.2.3'
+ruby '2.4.1'
 
 source 'https://rubygems.org' do
   gem 'coffee-rails'
@@ -7,7 +7,7 @@ source 'https://rubygems.org' do
   gem 'jquery-rails'
   gem 'therubyracer'
   gem 'mysql2', '~> 0.3.21'
-  gem 'rails', '4.2.4'
+  gem 'rails', '4.2.10'
   gem 'slack-api'
   gem 'slack_markdown'
   gem 'slim-rails'

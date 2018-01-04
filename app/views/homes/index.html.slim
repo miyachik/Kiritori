@@ -1,10 +1,10 @@
 h1 Welcome to Kiritori
 h2 Kiritori exports slack posts as Markdown
 = form_tag(action="/homes#create", :method => :POST)
-  = p '始点URL'
+  = p 'Start URL'
   = text_field :url ,:start, size: 100
   br
-  = p '終端URL'
+  = p 'End URL'
   = text_field :url ,:end, size: 100
-  = submit_tag "発行"
+  = submit_tag "publish"
 
